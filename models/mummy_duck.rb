@@ -45,9 +45,9 @@ class MummyDuck
   end
 
   def ducklings()
-    sql = "SELECT * FROM ducklings WHERE mummy_id = #{@id};" #working on current instance of artist, so can make use of the instance variables - in this case @id!
+    sql = "SELECT * FROM ducklings WHERE mummy_id = #{@id};"
     ducklings = SqlRunner.run(sql )
-    result = ducklings.map { |baby| Duckling.new( baby ) } #converts every returned hash into new album objects. Creates a nw array of albums
+    result = ducklings.map { |baby| Duckling.new( baby ) } 
     return result
   end
 
